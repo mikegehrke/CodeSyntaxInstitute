@@ -112,5 +112,15 @@
             <p>&copy; 2025 CodeSyntaxInstitute. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('#name').value;
+            alert('Vielen Dank, ' + name + '! Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in Kürze bei Ihnen melden.');
+            form.reset();
+        });
+    </script>
 </body>
 </html>
