@@ -3,14 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Blue-Themed Web Design</title>
+    <title>Code Syntax Institute - Professional Software Development</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Code Syntax Institute</h1>
-        <p>This is an animated blue-themed web design example.</p>
-    </div>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">Code Syntax Institute</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero animate-on-scroll">
+            <div class="container">
+                <h1>Welcome to Code Syntax Institute</h1>
+                <p>Empowering developers with cutting-edge software solutions and professional training.</p>
+                <a href="#services" class="btn btn-primary">Explore Our Services</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about animate-on-scroll">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <p>Code Syntax Institute is a leading software development and training organization dedicated to helping individuals and businesses achieve their technology goals. With years of experience in the industry, we specialize in creating innovative solutions and providing top-tier education.</p>
+                    <p>Our team of expert developers and instructors are committed to delivering excellence in every project and course we offer. We believe in the power of technology to transform lives and businesses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services animate-on-scroll">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>Web Development</h3>
+                        <p>Custom web applications built with modern technologies to meet your business needs.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform mobile solutions for iOS and Android devices.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Software Training</h3>
+                        <p>Comprehensive training programs designed to upskill developers at all levels.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Consulting Services</h3>
+                        <p>Expert guidance to help you navigate complex technical challenges and decisions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features animate-on-scroll">
+            <div class="container">
+                <h2>Why Choose Us</h2>
+                <div class="features-grid">
+                    <article class="feature-item">
+                        <h3>Expert Team</h3>
+                        <p>Our developers have years of experience across multiple industries and technologies.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Quality Assurance</h3>
+                        <p>Rigorous testing and code review processes ensure reliable, high-quality deliverables.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock support to address your concerns and keep your projects running smoothly.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Agile Methodology</h3>
+                        <p>Flexible, iterative approach that adapts to your changing requirements and feedback.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Modern Technologies</h3>
+                        <p>We stay up-to-date with the latest tools and frameworks to deliver cutting-edge solutions.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Cost-Effective</h3>
+                        <p>Competitive pricing without compromising on quality or service excellence.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact animate-on-scroll">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>Have questions or ready to start your next project? Reach out to us today!</p>
+                        <address>
+                            <p><strong>Email:</strong> info@codesyntaxinstitute.com</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Address:</strong> 123 Tech Street, Silicon Valley, CA 94000</p>
+                        </address>
+                    </div>
+                    <form class="contact-form" aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Code Syntax Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
