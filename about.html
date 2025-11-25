@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Über das Code Syntax Institut - Modernste App-Entwicklung und KI-Ausbildung in Köln" />
+    <title>Über uns - Code Syntax Institut</title>
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+
+    <script defer src="scripts/three-background.js"></script>
+    <script defer src="scripts/ai-bubbles.js"></script>
+    <script defer src="scripts/main.js"></script>
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: calc(100px + var(--spacing-lg)) var(--spacing-md) var(--spacing-xl);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .about-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(135deg, var(--text-primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .about-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .about-section h2 {
+            color: var(--primary-light);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.75rem;
+        }
+        
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .about-section li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+        
+        .about-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .team-card {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin: 0 auto var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .team-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .team-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        
+        .value-item {
+            background: rgba(99, 102, 241, 0.1);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            text-align: center;
+        }
+        
+        .value-item strong {
+            color: var(--primary-light);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="bgCanvas"></canvas>
+
+    <header class="header">
+        <img src="assets/logo.svg" alt="Code Syntax Institut Logo" class="logo" />
+        <nav>
+            <a href="index.html">Start</a>
+            <a href="about.html">Über uns</a>
+            <a href="index.html#kurse">Kurse</a>
+            <a href="index.html#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>Über das Code Syntax Institut</h1>
+        <p class="subtitle">
+            Wir gestalten die digitale Zukunft durch innovative Bildung
+        </p>
+    </section>
+
+    <main class="about-content">
+        <section class="about-section fade-in-up">
+            <h2>Unsere Mission</h2>
+            <p>
+                Das Code Syntax Institut ist ein führendes Bildungszentrum für moderne Softwareentwicklung 
+                und Künstliche Intelligenz in Köln. Wir glauben daran, dass jeder das Potenzial hat, 
+                die digitale Welt mitzugestalten.
+            </p>
+            <p>
+                Unsere praxisorientierten Programme bereiten Sie optimal auf die Anforderungen 
+                der Tech-Industrie vor - von Mobile Development über Cloud Computing bis hin zu 
+                KI-gestützten Anwendungen.
+            </p>
+        </section>
+
+        <section class="about-section fade-in-up delay-1">
+            <h2>Was uns auszeichnet</h2>
+            <ul>
+                <li>Praxisnahe Projekte mit echten Unternehmen</li>
+                <li>Kleine Lerngruppen für individuelle Betreuung</li>
+                <li>Modernste Technologien und Tools</li>
+                <li>Erfahrene Dozenten aus der Industrie</li>
+                <li>Karriereberatung und Netzwerkmöglichkeiten</li>
+                <li>Flexible Lernformate (Präsenz & Online)</li>
+            </ul>
+        </section>
+
+        <section class="about-section fade-in-up delay-2">
+            <h2>Unsere Werte</h2>
+            <div class="values-list">
+                <div class="value-item">
+                    <strong>Innovation</strong>
+                    <span>Immer am Puls der Technologie</span>
+                </div>
+                <div class="value-item">
+                    <strong>Qualität</strong>
+                    <span>Exzellenz in der Ausbildung</span>
+                </div>
+                <div class="value-item">
+                    <strong>Inklusion</strong>
+                    <span>Tech für alle zugänglich machen</span>
+                </div>
+                <div class="value-item">
+                    <strong>Praxis</strong>
+                    <span>Lernen durch Anwenden</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section fade-in-up delay-3">
+            <h2>Unser Team</h2>
+            <p>
+                Unser engagiertes Team aus erfahrenen Entwicklern, Designern und Pädagogen 
+                arbeitet leidenschaftlich daran, Ihnen die beste Lernerfahrung zu bieten.
+            </p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3>Mike Gehrke</h3>
+                    <p>Gründer & Lead Instructor</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👩‍🎓</div>
+                    <h3>Sarah Müller</h3>
+                    <p>KI & Machine Learning</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👨‍🔬</div>
+                    <h3>Thomas Weber</h3>
+                    <p>Mobile Development</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section fade-in-up delay-4">
+            <h2>Standort</h2>
+            <p>
+                Unser modernes Institut befindet sich im Herzen von Köln, 
+                gut erreichbar mit öffentlichen Verkehrsmitteln.
+            </p>
+            <p>
+                <strong>Adresse:</strong> Musterstraße 123, 50667 Köln<br />
+                <strong>E-Mail:</strong> mikegehrke@gmx.com<br />
+                <strong>Telefon:</strong> 0163 2670137
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Code Syntax Institut • Köln</p>
+        <p>Kontakt: mikegehrke@gmx.com • 0163 2670137</p>
+    </footer>
+
+    <div id="aiBubbleContainer"></div>
+</body>
+</html>
