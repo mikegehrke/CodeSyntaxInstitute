@@ -78,9 +78,21 @@
         return Math.random() * (max - min) + min;
     }
 
-    // Interactive bubble effect on mouse move
+    // Interactive bubble effect on mouse move (throttled)
+    let lastMouseBubbleTime = 0;
+    const MOUSE_BUBBLE_THROTTLE = 200; // ms between bubble creations
+    let mouseBubbleCount = 0;
+    const MAX_MOUSE_BUBBLES = 10;
+
     document.addEventListener('mousemove', function(e) {
-        if (!bubbleContainer || Math.random() > 0.05) return;
+        const now = Date.now();
+        if (!bubbleContainer || 
+            now - lastMouseBubbleTime < MOUSE_BUBBLE_THROTTLE || 
+            mouseBubbleCount >= MAX_MOUSE_BUBBLES ||
+            Math.random() > 0.3) return;
+
+        lastMouseBubbleTime = now;
+        mouseBubbleCount++;
 
         const bubble = document.createElement('div');
         bubble.className = 'ai-bubble';
@@ -101,6 +113,7 @@
         setTimeout(() => {
             if (bubble.parentNode) {
                 bubble.parentNode.removeChild(bubble);
+                mouseBubbleCount--;
             }
         }, 3000);
     });

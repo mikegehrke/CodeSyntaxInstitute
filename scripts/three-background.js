@@ -1,4 +1,4 @@
-// three-background.js - A 3D animated particle background using Three.js
+// three-background.js - A 3D animated particle background using Canvas API (Three.js-style)
 
 (function() {
     'use strict';
@@ -34,7 +34,7 @@
         animate();
         
         window.addEventListener('resize', resizeCanvas);
-        console.log('Three.js-style background initialized');
+        console.log('Canvas-based particle background initialized');
     }
 
     function resizeCanvas() {
