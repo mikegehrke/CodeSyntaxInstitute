@@ -185,7 +185,7 @@ function validateForm(data) {
  * @returns {boolean} - Whether the email is valid
  */
 function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
@@ -196,7 +196,7 @@ window.addEventListener('load', function() {
 });
 
 // Log scroll position changes (throttled)
-var scrollTimeout;
+let scrollTimeout;
 window.addEventListener('scroll', function() {
     if (scrollTimeout) {
         clearTimeout(scrollTimeout);
@@ -207,7 +207,7 @@ window.addEventListener('scroll', function() {
 });
 
 // Log window resize events (throttled)
-var resizeTimeout;
+let resizeTimeout;
 window.addEventListener('resize', function() {
     if (resizeTimeout) {
         clearTimeout(resizeTimeout);
