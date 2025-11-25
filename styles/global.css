@@ -53,6 +53,13 @@
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 30px rgba(78, 203, 255, 0.3);
+    
+    /* Breakpoints (als Referenz, werden in Media Queries verwendet)
+       --breakpoint-sm: 480px
+       --breakpoint-md: 768px
+       --breakpoint-lg: 1024px
+       --breakpoint-xl: 1200px
+    */
 }
 
 /* Reset und Box-Sizing */

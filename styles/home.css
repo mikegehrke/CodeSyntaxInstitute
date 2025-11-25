@@ -406,12 +406,7 @@
 /* Tablet Landscape */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .course-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .course-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 400px;
-        margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-items: center;
     }
 }

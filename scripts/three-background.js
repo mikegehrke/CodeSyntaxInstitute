@@ -289,11 +289,7 @@ class ThreeBackground {
      */
     createFallbackBackground() {
         if (this.canvas) {
-            this.canvas.style.background = `
-                radial-gradient(circle at 20% 80%, rgba(78, 203, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 119, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 60%)
-            `;
+            this.canvas.style.background = 'radial-gradient(circle at 20% 80%, rgba(78, 203, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0, 119, 255, 0.1) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 60%)';
         }
     }
     
