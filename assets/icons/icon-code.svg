@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Terminal window -->
+  <rect x="10" y="15" width="60" height="50" rx="5" ry="5" stroke="url(#codeGrad)" stroke-width="2" fill="none"/>
+  
+  <!-- Window header -->
+  <line x1="10" y1="25" x2="70" y2="25" stroke="url(#codeGrad)" stroke-width="1.5"/>
+  
+  <!-- Window buttons -->
+  <circle cx="18" cy="20" r="2.5" fill="#f472b6"/>
+  <circle cx="26" cy="20" r="2.5" fill="#fbbf24"/>
+  <circle cx="34" cy="20" r="2.5" fill="#34d399"/>
+  
+  <!-- Code brackets < > -->
+  <path d="M25 40 L18 45 L25 50" stroke="#6366f1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M55 40 L62 45 L55 50" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Slash / -->
+  <line x1="45" y1="35" x2="35" y2="55" stroke="#818cf8" stroke-width="3" stroke-linecap="round"/>
+</svg>
