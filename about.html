@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Meta-Tags -->
+    <title>Über uns | Code Syntax Institut</title>
+    <meta name="description" content="Erfahren Sie mehr über das Code Syntax Institut - Ihre Akademie für zukunftsorientierte Technologie-Ausbildung in Köln." />
+    <meta name="keywords" content="Code Syntax Institut, Über uns, Team, Mission, Vision, Köln, Technologie-Ausbildung" />
+    <meta name="author" content="Code Syntax Institut" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Über uns | Code Syntax Institut" />
+    <meta property="og:description" content="Erfahren Sie mehr über das Code Syntax Institut und unsere Mission." />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Code Syntax Institut" />
+    
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    
+    <!-- Preconnect für Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Scripts -->
+    <script defer src="scripts/three-background.js"></script>
+    <script defer src="scripts/ai-bubbles.js"></script>
+    <script defer src="scripts/main.js"></script>
+    
+    <!-- Zusätzliche Styles für About-Seite -->
+    <style>
+        .about-hero {
+            min-height: 60vh;
+            padding-top: calc(var(--spacing-xxl) + 100px);
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xxl) var(--spacing-md);
+        }
+        
+        .about-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .about-section:nth-child(1) { animation-delay: 0.1s; }
+        .about-section:nth-child(2) { animation-delay: 0.2s; }
+        .about-section:nth-child(3) { animation-delay: 0.3s; }
+        .about-section:nth-child(4) { animation-delay: 0.4s; }
+        
+        .about-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+        
+        .about-section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .about-section li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+            position: relative;
+            color: var(--text-secondary);
+        }
+        
+        .about-section li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(78, 203, 255, 0.05);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .value-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .value-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .about-hero {
+                min-height: 50vh;
+                padding-top: calc(var(--spacing-xl) + 80px);
+            }
+            
+            .about-section {
+                padding: var(--spacing-lg);
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip Link für Accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- 3D Background Canvas -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+    
+    <!-- AI Bubble Container -->
+    <div id="aiBubbleContainer" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <a href="index.html" class="logo-text" aria-label="Code Syntax Institut - Startseite">
+            <span>CSI</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <a href="index.html">Start</a>
+            <a href="about.html" aria-current="page">Über uns</a>
+            <a href="index.html#kurse">Kurse</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero about-hero" aria-labelledby="about-title">
+            <h1 id="about-title" class="title">Über uns</h1>
+            <p class="subtitle">
+                Zukunftsorientierte Technologie-Ausbildung in Köln
+            </p>
+        </section>
+
+        <!-- About Content -->
+        <div class="about-content">
+            <!-- Mission -->
+            <section class="about-section" aria-labelledby="mission-title">
+                <h2 id="mission-title">Unsere Mission</h2>
+                <p>
+                    Das Code Syntax Institut wurde mit einer klaren Vision gegründet: 
+                    Menschen für die digitale Zukunft zu befähigen. Wir glauben daran, dass 
+                    jeder die Möglichkeit haben sollte, die Technologien von morgen zu verstehen 
+                    und aktiv mitzugestalten.
+                </p>
+                <p>
+                    Unser Ziel ist es, praxisnahe und zukunftsorientierte Ausbildungsprogramme 
+                    anzubieten, die unsere Teilnehmer auf die Anforderungen der modernen 
+                    Tech-Industrie vorbereiten.
+                </p>
+            </section>
+
+            <!-- Was wir bieten -->
+            <section class="about-section" aria-labelledby="offer-title">
+                <h2 id="offer-title">Was wir bieten</h2>
+                <ul>
+                    <li>Intensive Bootcamps für Mobile Development mit Android, iOS und Flutter</li>
+                    <li>Spezialisierte Kurse zu Künstlicher Intelligenz und Machine Learning</li>
+                    <li>Umfassende Backend-Ausbildung mit Java, Python und Cloud-Technologien</li>
+                    <li>Praktische Projekte mit echten Anwendungsfällen</li>
+                    <li>Individuelle Mentoring-Programme</li>
+                    <li>Karriereberatung und Unterstützung bei der Jobsuche</li>
+                </ul>
+            </section>
+
+            <!-- Unsere Werte -->
+            <section class="about-section" aria-labelledby="values-title">
+                <h2 id="values-title">Unsere Werte</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="icon" aria-hidden="true">🚀</div>
+                        <h4>Innovation</h4>
+                        <p>Immer am Puls der Zeit</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="icon" aria-hidden="true">🎯</div>
+                        <h4>Praxisnähe</h4>
+                        <p>Lernen durch Anwenden</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="icon" aria-hidden="true">🤝</div>
+                        <h4>Gemeinschaft</h4>
+                        <p>Zusammen wachsen</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="icon" aria-hidden="true">✨</div>
+                        <h4>Exzellenz</h4>
+                        <p>Qualität in allem</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Standort -->
+            <section class="about-section" aria-labelledby="location-title">
+                <h2 id="location-title">Unser Standort</h2>
+                <p>
+                    Das Code Syntax Institut befindet sich im Herzen von Köln. Unsere modernen 
+                    Räumlichkeiten bieten eine inspirierende Lernumgebung, ausgestattet mit 
+                    der neuesten Technologie.
+                </p>
+                <p>
+                    Neben unseren Präsenzkursen bieten wir auch hybride und vollständig 
+                    digitale Lernformate an, um maximale Flexibilität zu gewährleisten.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="kontakt" class="footer" role="contentinfo">
+        <p>© 2025 Code Syntax Institut • Köln</p>
+        <p>
+            Kontakt: 
+            <a href="mailto:mikegehrke@gmx.com">mikegehrke@gmx.com</a> • 
+            <a href="tel:+491632670137">0163 2670137</a>
+        </p>
+    </footer>
+</body>
+</html>

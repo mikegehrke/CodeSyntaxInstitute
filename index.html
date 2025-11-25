@@ -2,69 +2,122 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Syntax Institut</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Meta-Tags -->
+    <title>Code Syntax Institut | Modernste App-Entwicklung & KI-Ausbildung in Köln</title>
+    <meta name="description" content="Code Syntax Institut - Ihre Akademie für Mobile Development, Künstliche Intelligenz und Cloud Backend in Köln. Lernen Sie Android, iOS, Flutter, KI-Agenten und mehr." />
+    <meta name="keywords" content="App Entwicklung, Mobile Development, KI, Künstliche Intelligenz, Flutter, Android, iOS, Python, Java, Köln, Ausbildung, Bootcamp" />
+    <meta name="author" content="Code Syntax Institut" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Code Syntax Institut | App-Entwicklung & KI-Ausbildung" />
+    <meta property="og:description" content="Modernste App-Entwicklung, KI-Tools und Mobile Full-Stack Ausbildung in Köln." />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Code Syntax Institut" />
+    
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/animations.css" />
-
+    
+    <!-- Preconnect für Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Scripts -->
     <script defer src="scripts/three-background.js"></script>
     <script defer src="scripts/ai-bubbles.js"></script>
     <script defer src="scripts/main.js"></script>
 </head>
 
 <body>
-    <canvas id="bgCanvas"></canvas>
+    <!-- Skip Link für Accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- 3D Background Canvas -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+    
+    <!-- AI Bubble Container -->
+    <div id="aiBubbleContainer" aria-hidden="true"></div>
 
-    <header class="header">
-        <img src="assets/logo.png" class="logo" />
-        <nav>
-            <a href="index.html">Start</a>
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <a href="index.html" class="logo-text" aria-label="Code Syntax Institut - Startseite">
+            <span>CSI</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <a href="index.html" aria-current="page">Start</a>
             <a href="about.html">Über uns</a>
             <a href="#kurse">Kurse</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="title">Code Syntax Institut</h1>
-        <p class="subtitle">
-            Modernste App-Entwicklung • KI-Tools • Mobile Full-Stack • 100% Zukunft
-        </p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="title">Code Syntax Institut</h1>
+            <p class="subtitle">
+                Modernste App-Entwicklung • KI-Tools • Mobile Full-Stack • 100% Zukunft
+            </p>
+            <a href="#kurse" class="cta-btn" role="button">Jetzt starten</a>
+        </section>
 
-        <a href="#kurse" class="cta-btn">Jetzt starten</a>
-    </section>
+        <!-- Kurse Section -->
+        <section id="kurse" class="courses" aria-labelledby="courses-title">
+            <h2 id="courses-title">Unsere Programme</h2>
 
-    <section id="kurse" class="courses">
-        <h2>Unsere Programme</h2>
+            <div class="course-grid" role="list">
+                <!-- Mobile Development Karte -->
+                <article class="course-card" role="listitem">
+                    <div class="icon-placeholder" aria-hidden="true">📱</div>
+                    <h3>Mobile Development</h3>
+                    <p>Android, iOS, Flutter – alles in einem Programm.</p>
+                </article>
 
-        <div class="course-grid">
-            <div class="course-card">
-                <img src="assets/icons/icon-code.svg" class="card-icon" />
-                <h3>Mobile Development</h3>
-                <p>Android, iOS, Flutter – alles in einem Programm.</p>
+                <!-- KI Karte -->
+                <article class="course-card" role="listitem">
+                    <div class="icon-placeholder" aria-hidden="true">🤖</div>
+                    <h3>Künstliche Intelligenz</h3>
+                    <p>Agenten-Systeme, Prompt Engineering, Automatisierung.</p>
+                </article>
+
+                <!-- Cloud & Backend Karte -->
+                <article class="course-card" role="listitem">
+                    <div class="icon-placeholder" aria-hidden="true">☁️</div>
+                    <h3>Cloud &amp; Backend</h3>
+                    <p>Java, Python, APIs, Security, Deployment.</p>
+                </article>
             </div>
+        </section>
+    </main>
 
-            <div class="course-card">
-                <img src="assets/icons/icon-ai.svg" class="card-icon" />
-                <h3>Künstliche Intelligenz</h3>
-                <p>Agenten-Systeme, Prompt Engineering, Automatisierung.</p>
-            </div>
-
-            <div class="course-card">
-                <img src="assets/icons/icon-learn.svg" class="card-icon" />
-                <h3>Cloud & Backend</h3>
-                <p>Java, Python, APIs, Security, Deployment.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="kontakt" class="footer">
+    <!-- Footer -->
+    <footer id="kontakt" class="footer" role="contentinfo">
         <p>© 2025 Code Syntax Institut • Köln</p>
-        <p>Kontakt: mikegehrke@gmx.com • 0163 2670137</p>
+        <p>
+            Kontakt: 
+            <a href="mailto:mikegehrke@gmx.com">mikegehrke@gmx.com</a> • 
+            <a href="tel:+491632670137">0163 2670137</a>
+        </p>
     </footer>
-
-    <div id="aiBubbleContainer"></div>
 </body>
 </html>
