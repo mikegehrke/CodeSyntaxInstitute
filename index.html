@@ -3,68 +3,64 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Code Syntax Institut</title>
 
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/home.css" />
-    <link rel="stylesheet" href="styles/animations.css" />
-
-    <script defer src="scripts/three-background.js"></script>
-    <script defer src="scripts/ai-bubbles.js"></script>
-    <script defer src="scripts/main.js"></script>
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/home.css" />
+    <link rel="stylesheet" href="style/animations.css" />
 </head>
 
 <body>
-    <canvas id="bgCanvas"></canvas>
 
-    <header class="header">
-        <img src="assets/logo.png" class="logo" />
+    <!-- HEADER -->
+    <header>
+        <img src="assets/logo.svg" class="logo" alt="Code Syntax Logo" />
         <nav>
-            <a href="index.html">Start</a>
-            <a href="about.html">Über uns</a>
-            <a href="#kurse">Kurse</a>
+            <a href="#hero">Start</a>
+            <a href="#programme">Programme</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="title">Code Syntax Institut</h1>
-        <p class="subtitle">
-            Modernste App-Entwicklung • KI-Tools • Mobile Full-Stack • 100% Zukunft
-        </p>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero fade-in">
+        <img src="assets/hero-banner.png" class="hero-banner" alt="Hero Banner" />
 
-        <a href="#kurse" class="cta-btn">Jetzt starten</a>
+        <div class="hero-text">
+            <h1>Code Syntax Institut</h1>
+            <p>Weiterbildung • App-Entwicklung • KI-Tools • Mobile Full-Stack</p>
+        </div>
     </section>
 
-    <section id="kurse" class="courses">
+    <!-- PROGRAMME -->
+    <section id="programme" class="programme fade-in">
         <h2>Unsere Programme</h2>
 
-        <div class="course-grid">
-            <div class="course-card">
-                <img src="assets/icons/icon-code.svg" class="card-icon" />
+        <div class="grid">
+            <div class="card">
                 <h3>Mobile Development</h3>
-                <p>Android, iOS, Flutter – alles in einem Programm.</p>
+                <p>Android, iOS, Flutter – alles in einer Premium-Ausbildung.</p>
             </div>
 
-            <div class="course-card">
-                <img src="assets/icons/icon-ai.svg" class="card-icon" />
+            <div class="card">
                 <h3>Künstliche Intelligenz</h3>
-                <p>Agenten-Systeme, Prompt Engineering, Automatisierung.</p>
+                <p>Agenten-Systeme, Automatisierung & modernste KI-Tools.</p>
             </div>
 
-            <div class="course-card">
-                <img src="assets/icons/icon-learn.svg" class="card-icon" />
+            <div class="card">
                 <h3>Cloud & Backend</h3>
-                <p>Java, Python, APIs, Security, Deployment.</p>
+                <p>Java, Python, APIs, Security, Realtime-Systeme.</p>
             </div>
         </div>
     </section>
 
-    <footer id="kontakt" class="footer">
+    <!-- FOOTER -->
+    <footer id="kontakt" class="footer fade-in">
         <p>© 2025 Code Syntax Institut • Köln</p>
         <p>Kontakt: mikegehrke@gmx.com • 0163 2670137</p>
     </footer>
 
-    <div id="aiBubbleContainer"></div>
+    <script src="scripts/scroll.js"></script>
 </body>
 </html>

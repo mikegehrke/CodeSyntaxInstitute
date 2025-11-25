@@ -1,0 +1,52 @@
+.hero {
+    padding-top: 120px;
+    text-align: center;
+}
+
+.hero-banner {
+    width: 90%;
+    max-width: 720px;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-top: 12px;
+    opacity: .7;
+}
+
+.programme {
+    margin-top: 120px;
+    padding: 60px;
+    text-align: center;
+}
+
+.programme h2 {
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
