@@ -448,6 +448,29 @@ header {
     }
 }
 
+/* Animation classes for scroll-triggered elements */
+.animate-target {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Feature card hover state */
+.feature-card.animate-in:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Form button success state */
+.btn-success {
+    background-color: #10b981 !important;
+    color: var(--text-light) !important;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .about-content {

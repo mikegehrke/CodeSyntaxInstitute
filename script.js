@@ -70,21 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe elements for animation
     const animateElements = document.querySelectorAll('.feature-card, .stat-item, .about-text, .contact-info, .contact-form');
     animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.classList.add('animate-target');
         observer.observe(el);
     });
-
-    // Add CSS class when element is in view
-    document.head.insertAdjacentHTML('beforeend', `
-        <style>
-            .animate-in {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        </style>
-    `);
 
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
@@ -104,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const originalText = submitBtn.textContent;
 
                 submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.backgroundColor = '#10b981';
+                submitBtn.classList.add('btn-success');
 
                 // Reset form
                 contactForm.reset();
@@ -112,24 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset button after 3 seconds
                 setTimeout(function() {
                     submitBtn.textContent = originalText;
-                    submitBtn.style.backgroundColor = '';
+                    submitBtn.classList.remove('btn-success');
                 }, 3000);
             }
         });
     }
-
-    // Add hover effect to feature cards
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        card.addEventListener('mouseleave', function() {
-            if (this.classList.contains('animate-in')) {
-                this.style.transform = 'translateY(0) scale(1)';
-            }
-        });
-    });
 
     // Stat counter animation
     const statNumbers = document.querySelectorAll('.stat-number');
